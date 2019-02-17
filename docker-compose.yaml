@@ -1,0 +1,12 @@
+version: 3
+
+services:
+  webwander_eth1:
+    image: "bennnnnnnn/traffic_generator"
+    networks:
+      - bridge-network-eth1
+
+  webwander_wlan0:
+    image: "bennnnnnnn/traffic_generator"
+    networks:
+      - bridge-network-wlan0

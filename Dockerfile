@@ -1,6 +1,6 @@
-FROM python:3.7-alpine
-RUN apk update
-RUN apk add chromium-chromedriver bash libxml2-dev libxslt-dev build-base jq
+FROM python:3.7-stretch
+RUN apt-get update
+RUN apt-get install xvfb chromium-chromedriver libxml2-dev libxslt-dev build-base jq
 RUN mkdir -p /usr/src/traffic_generator
 WORKDIR /usr/src/traffic_generator
 COPY *.py /usr/src/traffic_generator/

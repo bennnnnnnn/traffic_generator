@@ -1,6 +1,6 @@
 FROM python:3.7-stretch
 RUN apt-get update
-RUN apt-get install xvfb chromium-chromedriver libxml2-dev libxslt-dev build-base jq
+RUN apt-get install -y xvfb chromedriver libxml2-dev libxslt-dev jq
 RUN mkdir -p /usr/src/traffic_generator
 WORKDIR /usr/src/traffic_generator
 COPY *.py /usr/src/traffic_generator/

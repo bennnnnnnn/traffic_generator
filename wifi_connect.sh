@@ -17,5 +17,10 @@ if ip link show ${wireless_if}; then
             exit 1
         fi
     done
+
+    if wget -q --spider google.com; then
+        exit 0
+    fi
+
     #TODO perform POST call to authenticate to captive portal
 fi

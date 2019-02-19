@@ -25,7 +25,7 @@ while read -r link; do
     if_ip=$(ip -br -4 address show dev $link scope global | awk '{split($3,a,"/"); print a[1]}')
     echo "Fetching $bridgename's ip"
     bridge_nw=$(docker network inspect $bridge | jq '.[0].IPAM.Config[0].Subnet')
-    bridge_nw="${$bridgeip/\"/}"
+    bridge_nw=$(sed -e 's/^"//' -e 's/"$//' <<<"$bridge_nw")
     echo "Modifying iptables rules for $bridgename"
     iptables -t nat -A POSTROUTING -s $bridge_nw ! -o $bridgename -j SNAT --to-source $if_ip
     echo "Created bridge $bridgename for interface $link with bridge ip $bridge_nw and interface ip $if_ip"

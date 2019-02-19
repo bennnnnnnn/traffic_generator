@@ -25,3 +25,4 @@ if ip link show ${wireless_if}; then
 
     #TODO perform POST call to authenticate to captive portal
 fi
+systemctl restart networking.service

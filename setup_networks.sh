@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+./wifi_connect.sh
+
 interfaces=$(find /sys/class/net -type l -not -lname '*virtual*' -printf '%f\n' | grep -v "eth0")
 
 while read -r link; do

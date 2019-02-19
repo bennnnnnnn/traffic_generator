@@ -11,5 +11,5 @@ if __name__ == "__main__":
     while True:
         time.sleep(3600)
         downloader.download_list()
-        downloader.set_urls()
+        downloader.set_urls(download_urls)
         downloader.download_list()

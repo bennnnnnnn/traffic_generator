@@ -5,7 +5,7 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-apt-get update
+#apt-get update
 apt-get install -y jq
 
 ./wifi_connect.sh
